@@ -16,6 +16,7 @@ RUN make-cadir openvpn-ca \
 COPY config/vars openvpn-ca/vars
 COPY config/client_base.conf client-configs/base.conf
 COPY config/make_client_config.sh client-configs/make_client_config.sh
+COPY config/server.conf server.conf
 COPY openvpn-starter.sh openvpn-starter.sh
 
 RUN chmod 700 client-configs/make_client_config.sh \
