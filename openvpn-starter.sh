@@ -41,5 +41,5 @@ chmod 600 /root/client-configs/files/${CLIENT_NAME}.ovpn
 echo "################################"
 echo "# Starting an OpenVPN server ..."
 echo "################################"
-cd /root
-/usr/sbin/openvpn --config /etc/openvpn/server.conf
+cd /etc/openvpn
+/usr/sbin/openvpn --config server.conf
