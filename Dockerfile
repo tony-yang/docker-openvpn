@@ -22,4 +22,6 @@ COPY openvpn-starter.sh openvpn-starter.sh
 RUN chmod 700 client-configs/make_client_config.sh \
  && chmod 700 openvpn-starter.sh
 
+EXPOSE 1194
+
 CMD ["/root/openvpn-starter.sh"]

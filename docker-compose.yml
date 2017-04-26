@@ -8,6 +8,10 @@ services:
       - vpn
     volumes:
       - ~/vpn:/root/client-configs/files
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - "1194:1194"
 
 networks:
   vpn:
