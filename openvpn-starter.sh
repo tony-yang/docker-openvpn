@@ -4,7 +4,7 @@ sleep 10s
 
 IP=$(hostname -I)
 if [ "$CLIENT_NAME" == "" ]; then
-  CLIENT_NAME = "client"
+  CLIENT_NAME="client"
 fi
 
 cd /root/openvpn-ca

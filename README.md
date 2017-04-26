@@ -9,8 +9,8 @@ The client profile will be available in the mounted volume under the `~/vpn` dir
 ## User Guide
 To start the OpenVPN Server
 ```
-export SERVER_NAME='domain_name or IP address' && export CLIENT_NAME='client name' && \
-sudo docker-compose build openvpn && sudo docker-compose up -d
+sudo bash -c "export SERVER_NAME='domain_name or IP address' && export CLIENT_NAME='client name' && \
+docker-compose build openvpn && docker-compose up -d"
 ```
 
 
