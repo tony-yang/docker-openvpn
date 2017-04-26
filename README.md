@@ -9,8 +9,8 @@ The client profile will be available in the mounted volume under the `~/vpn` dir
 ## User Guide
 To start the OpenVPN Server
 ```
-sudo bash -c "export SERVER_NAME='domain_name or IP address' && export CLIENT_NAME='client name' && \
-docker-compose build openvpn && docker-compose up -d"
+sudo bash -c "export SERVER_NAME='my_server_name' && export CLIENT_NAME='client' && export CLIENT_EMAIL='client@email.com'"
+sudo bash -c "docker-compose build openvpn && docker-compose up -d"
 ```
 
 
@@ -19,7 +19,8 @@ Required Variables:
 - `SERVER_NAME` - Sets the domain name or IP address of the OpenVPN server. If this environment variable is not set, the client config will be populated with `my_server_name`, which needs to be manually populated later, or the connection request will fail.
 
 Optional Variables:
-- `CLIENT_NAME` - Sets the name of the client config. Defaults to `client`
+- `CLIENT_NAME` - Sets the client profile name. Defaults to `client`
+- `CLIENT_EMAIL` - Sets the user email. Defaults to `client@email.com`
 
 
 ## Security Discussion

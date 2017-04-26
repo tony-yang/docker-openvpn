@@ -16,6 +16,7 @@ services:
     environment:
       - SERVER_NAME
       - CLIENT_NAME
+      - CLIENT_EMAIL
 
 networks:
   vpn:
