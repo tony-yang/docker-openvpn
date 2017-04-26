@@ -1,5 +1,7 @@
 #!/bin/bash
 
+IP=$(hostname -I)
+
 cd /root/openvpn-ca
 source /root/openvpn-ca/vars
 /root/openvpn-ca/clean-all
@@ -15,3 +17,10 @@ cp ca.crt ca.key server.crt server.key ta.key dh2048.pem /etc/openvpn
 
 cd /root
 cp server.conf /etc/openvpn
+
+iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j SNAT --to-source $IP
+
+mkdir -p /dev/net
+if [ ! -f /dev/net/tun ]; then
+  mknod /dev/net/tun c 10 200
+fi
