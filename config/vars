@@ -65,7 +65,7 @@ export KEY_COUNTRY="US"
 export KEY_PROVINCE="CA"
 export KEY_CITY="SanFrancisco"
 export KEY_ORG="ORGNAME"
-export KEY_EMAIL="test@email.com"
+export KEY_EMAIL="$CLIENT_EMAIL"
 export KEY_OU="OUNAME"
 
 # X509 Subject Field
