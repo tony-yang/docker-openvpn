@@ -3,7 +3,7 @@
 sleep 10s
 
 IP=$(hostname -I)
-if [ "$CLIENT_NAME" == "" ]; then
+if [ "${CLIENT_NAME}" == "" ]; then
   CLIENT_NAME="client"
 fi
 
@@ -15,7 +15,7 @@ export EASY_RSA="${EASY_RSA:-.}"
 /root/openvpn-ca/pkitool --server server
 /root/openvpn-ca/build-dh
 openvpn --genkey --secret /root/openvpn-ca/keys/ta.key
-/root/openvpn-ca/pkitool $CLIENT_NAME
+/root/openvpn-ca/pkitool ${CLIENT_NAME}
 
 cd /root/openvpn-ca/keys
 cp ca.crt ca.key server.crt server.key ta.key dh2048.pem /etc/openvpn
@@ -34,9 +34,9 @@ echo "##############################"
 echo "# Creating a client config ..."
 echo "##############################"
 cd /root/client-configs
-/root/client-configs/make_client_config.sh $CLIENT_NAME
+/root/client-configs/make_client_config.sh ${CLIENT_NAME}
 
-chmod 600 /root/client-configs/files/client.ovpn
+chmod 600 /root/client-configs/files/${CLIENT_NAME}.ovpn
 
 echo "################################"
 echo "# Starting an OpenVPN server ..."
