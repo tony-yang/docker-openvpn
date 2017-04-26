@@ -24,3 +24,6 @@ mkdir -p /dev/net
 if [ ! -f /dev/net/tun ]; then
   mknod /dev/net/tun c 10 200
 fi
+
+cd /root/client-configs
+/root/client-configs/make_client_config.sh client

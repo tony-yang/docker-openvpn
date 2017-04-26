@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+  openvpn:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - vpn
+    volumes:
+      - ~/vpn:/root/client-configs/files
+
+networks:
+  vpn:
