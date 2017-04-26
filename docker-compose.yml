@@ -12,6 +12,10 @@ services:
       - NET_ADMIN
     ports:
       - "1194:1194"
+    restart: always
+    environment:
+      - SERVER_NAME=${SERVER_NAME}
+      - CLIENT_NAME=${CLIENT_NAME}
 
 networks:
   vpn:
