@@ -4,7 +4,6 @@ services:
   openvpn:
     build:
       context: .
-      dockerfile: Dockerfile
     networks:
       - vpn
     volumes:

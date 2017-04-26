@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sleep 10s
+
 IP=$(hostname -I)
 
 cd /root/openvpn-ca
@@ -27,3 +29,8 @@ fi
 
 cd /root/client-configs
 /root/client-configs/make_client_config.sh client
+
+while :
+do
+  sleep 10m
+done
