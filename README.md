@@ -66,7 +66,7 @@ Optional Variables:
 
 
 ## References
-These references provided inspirations and insights into some of the problems I have encountered along the way. Thanks to those authors for sharing them.
+These references provided inspirations and insights into some of the problems I have encountered along the way. Thanks to those authors who shared them.
 
 - https://www.digitalocean.com/community/tutorials/how-to-set-up-an-openvpn-server-on-ubuntu-16-04 (The project's workflow and configuration was mostly based on this tutorial)
 - https://github.com/kylemanna/docker-openvpn (It was a bit overkill for my purpose but highly recommend to take a look)
