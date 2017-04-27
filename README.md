@@ -46,6 +46,8 @@ sudo bash -c "export SERVER_NAME='my_server_name' && \
     docker-compose up -d"
 ```
 
+Copy the client profile from the `~/vpn` directory on the host you ran the Docker command to your client machine. Install the client profile into a OpenVPN client.
+
 
 ## Environment Variables
 Required Variables:
