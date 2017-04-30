@@ -59,10 +59,10 @@ Optional Variables:
 
 
 ## Additional Notes
-- Any contributions are welcome. If you decide to send a pull request, please justify why the change will benefit others in the pull request.
 - The use of the Ubuntu 16.04 base image in the Dockerfile was intentional. There are other smaller linux images such as the Alpine image that can probably achieve the same goal. However, since I'm using a LTS Ubuntu server and all my projects will be running on a LTS Ubuntu server, I decided to make everything consistent so that it will be easier for me to maintain. If you like to use this image but want to have a smaller footprint, feel free to fork the project. Alternatively, there is another OpenVPN docker image by `kylemanna` that you can take a look at.
 - The NET_ADMIN capability is added to this Docker image.
 - The client profile is not passphrase protected.
+- Any contributions are welcome.
 
 
 ## References
