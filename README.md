@@ -63,6 +63,7 @@ Optional Variables:
 - The NET_ADMIN capability is added to this Docker image.
 - The client profile is not passphrase protected.
 - Any contributions are welcome.
+- Restarting the same container will not refresh the client profile and the key used. To generate a new CA key, either delete the current profile or create a new container.
 
 
 ## References
