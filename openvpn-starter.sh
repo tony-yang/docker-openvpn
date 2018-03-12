@@ -13,12 +13,11 @@ if [ ! -d /root/openvpn-ca ]; then
   echo "#########################"
   echo "# ERROR: /root/openvpn-ca not found. Rebuild the container"
   exit 1
-elif [ -f /etc/openvpn/server.conf ] && [ -c /dev/net/tun ] && [ -f /root/client-configs/files/${CLIENT_NAME}.ovpn ]; then
+elif [ -f /etc/openvpn/server.conf ] && [ -f /root/client-configs/files/${CLIENT_NAME}.ovpn ]; then
   echo "#########################"
   echo "# Check configuration ..."
   echo "#########################"
   echo "# /etc/openvpn/server.conf found"
-  echo "# /dev/net/tun found"
   echo "# /root/client-configs/files/${CLIENT_NAME}.ovpn found"
   echo "#"
   echo "#"
@@ -45,11 +44,6 @@ else
 
   iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j SNAT --to-source $IP
 
-  mkdir -p /dev/net
-  if [ ! -f /dev/net/tun ]; then
-    mknod /dev/net/tun c 10 200
-  fi
-
   echo "##############################"
   echo "# Creating a client config ..."
   echo "##############################"
@@ -61,6 +55,11 @@ else
   echo "################################"
   echo "# Starting an OpenVPN server ..."
   echo "################################"
+fi
+
+mkdir -p /dev/net
+if [ ! -f /dev/net/tun ]; then
+  mknod /dev/net/tun c 10 200
 fi
 
 cd /etc/openvpn
