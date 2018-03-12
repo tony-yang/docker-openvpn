@@ -7,7 +7,7 @@ if [ "${CLIENT_NAME}" == "" ]; then
   CLIENT_NAME="client"
 fi
 
-if [ -d /root/openvpn-ca ]; then
+if [ ! -d /root/openvpn-ca ]; then
   echo "#########################"
   echo "# Check configuration ..."
   echo "#########################"
