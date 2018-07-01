@@ -9,6 +9,15 @@ The client profile will be available in the mounted volume under the `~/vpn` dir
 ## Prerequisite
 Before using this Docker image, please configure the host network and firewall rules.
 
+### Use Baremetal-Init
+This assumes the host is provisioned using the baremetal-init project and Chef is installed.
+```
+git clone https://github.com/tony-yang/baremetal-init.git
+cd ~/baremetal-init/cookbooks
+sudo chef-client --local-mode --override-runlist openvpn_host_configuration_cookbook
+```
+
+### Manually
 Allow IP Forwarding
 ```
 sudo vim /etc/sysctl.conf
@@ -37,16 +46,16 @@ sudo ufw reload
 
 
 ## User Guide
-To start the OpenVPN Server
+To start the OpenVPN Server, either run the `./create-new-openvpn.sh` script or run manually with:
 ```
 sudo bash -c "export SERVER_NAME='my_server_name' && \
-    export CLIENT_NAME='client' && \
+    export CLIENT_NAME='clientkey' && \
     export CLIENT_EMAIL='client@email.com' && \
     docker-compose build openvpn && \
     docker-compose up -d"
 ```
 
-Copy the client profile from the `~/vpn` directory on the host you ran the Docker command to your client machine. Install the client profile into a OpenVPN client.
+Copy the `clientkey.ovpn` profile from the `~/vpn` directory on the host you ran the Docker command to your client machine. Install the profile into a OpenVPN client.
 
 
 ## Environment Variables
